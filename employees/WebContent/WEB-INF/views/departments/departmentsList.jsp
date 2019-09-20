@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>departmentsList</title>
 </head>
 <body>
 	<h1>부서 목록</h1>
