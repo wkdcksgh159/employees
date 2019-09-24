@@ -59,7 +59,16 @@
 			</li>
 			<li><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무 목록</a></li>
 			<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">연봉 통계값(count, sum, avg, max, min, std)</a></li>
+			<li><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">사원 수(성별 group by gender)</a></li>
 		</ul>
 	</DIV>
+	<div>
+		<!-- 사원번호 범위 입력 -->
+		<form method="post" action="${pageContext.request.contextPath}/employees/getEmployeesListBetween">
+			<input type="number" name="begin">~<input type="number" name="end">
+			<button type="submit">사원 목록 between...and...</button>
+			${minEmpNo }~${maxEmpNo }
+		</form>
+	</div>
 </body>
 </html>
