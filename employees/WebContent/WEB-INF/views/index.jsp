@@ -57,6 +57,7 @@
 				<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=asc">오름차순(limit 50)</a>
 				<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순(limit 50)</a>
 			</li>
+			<li><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무 목록</a></li>
 		</ul>
 	</DIV>
 </body>
