@@ -54,12 +54,20 @@
 			<li><a href="${pageContext.request.contextPath}/departments/getDepartmentsList">부서 목록</a></li>
 			<li><a href="${pageContext.request.contextPath}/employees/getEmployeesList">사원 목록</a></li>
 			<li>
+				사원 목록 first_name
 				<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=asc">오름차순(limit 50)</a>
 				<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순(limit 50)</a>
 			</li>
 			<li><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무 목록</a></li>
 			<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">연봉 통계값(count, sum, avg, max, min, std)</a></li>
 			<li><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">사원 수(성별 group by gender)</a></li>
+			<!-- 
+				url : /departments/getDepartmentsCountByDeptNo
+				controller : GetDepartmentsCountByDeptNoServlet.class
+				model : DepartmentsDao.selectDepartmentsCountByDeptNo()
+				view : /WEB-INF/views/departments/departmentsCountByDeptNo.jsp
+			 -->
+			<li><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">부서당 사원 수</a></li>
 		</ul>
 	</DIV>
 	<div>

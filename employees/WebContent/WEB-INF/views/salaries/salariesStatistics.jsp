@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>연봉 통계값(count, sum, avg, max, min, std)</h1>
+	<a href="${pageContext.request.contextPath}/index">처음으로</a>
 	<table border="1">
 	<thead>
 		<tr>
