@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h1>사원 목록</h1>
+	<a href="${pageContext.request.contextPath}/index">처음으로</a>
 	<form method="get" action="${pageContext.request.contextPath}/employees/getEmployeesList">
 		<select name="limit">
 			<option value="10">10</option>

@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h1>부서 목록</h1>
+	<a href="${pageContext.request.contextPath}/index">처음으로</a>
 	<table border="1">
 		<thead>
 			<tr>

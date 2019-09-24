@@ -58,6 +58,7 @@
 				<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순(limit 50)</a>
 			</li>
 			<li><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무 목록</a></li>
+			<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">연봉 통계값(count, sum, avg, max, min, std)</a></li>
 		</ul>
 	</DIV>
 </body>
