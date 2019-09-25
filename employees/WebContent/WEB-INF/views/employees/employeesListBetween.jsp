@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>사원 목록 between</h1>
-	<a href="${pageContext.request.contextPath}">처음으로</a>
+	<a href="${pageContext.request.contextPath}/index">처음으로</a>
 	<table border="1">
 		<thead>
 			<tr>

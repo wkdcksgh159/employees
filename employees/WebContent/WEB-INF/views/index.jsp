@@ -68,6 +68,7 @@
 				view : /WEB-INF/views/departments/departmentsCountByDeptNo.jsp
 			 -->
 			<li><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">부서당 사원 수</a></li>
+			<li><a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage">사원목록 페이지(10명씩)</a></li>
 		</ul>
 	</DIV>
 	<div>

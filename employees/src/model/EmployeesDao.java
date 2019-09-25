@@ -13,6 +13,59 @@ import VO.Employees;
 import db.DBHelper;
 
 public class EmployeesDao {
+	//마지막페이지 구하는 메소드 생성
+	public int selectLastPage(int rowPerPage) {
+		EmployeesDao employeesDao = new EmployeesDao();
+		//selectEmployeesCount 메소드에서 항목의 총 개수를 가져옴
+		int rowCount = employeesDao.selectEmployeesCount();
+		int lastPage = 0;
+		//총 개수/페이지당보여줄개수의 나머지가 0이면 나눈값을 그대로 사용
+		if(rowCount%rowPerPage == 0) {
+			lastPage = rowCount/rowPerPage;
+		//총 개수/페이지당보여줄개수의 나머지가 0이 아니면 페이지는 마지막페이지인데
+		//보여줄항목이 남아있을수 있으므로 한페이지를 추가해서 짤리는걸 방지
+		} else {
+			lastPage = rowCount/rowPerPage + 1;
+		}
+		return lastPage;
+	}
+	//사원목록 페이지(10명씩) 출력하는 메소드 생성
+	public List<Employees> selectEmployeesListByPage(int currentPage, int rowPerPage){
+		List<Employees> list = new ArrayList<Employees>();
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		//employees의 모든 컬럼을 LIMIT에 입력된 값 사이만큼 출력
+		String sql = "SELECT * FROM employees LIMIT ?, ?";
+		
+		try {
+			conn = DBHelper.getConnection();
+			stmt = conn.prepareStatement(sql);
+			//페이지의시작을 구하는 공식 (현재페이지-1) * 한페이지당보여줄개수
+			int startPage = (currentPage-1) * rowPerPage;
+			stmt.setInt(1, startPage);
+			System.out.println("startPage : "+startPage);
+			stmt.setInt(2, rowPerPage);
+			rs = stmt.executeQuery();
+			//불러온 컬럼값들을 VO에 저장하고 list에 입력
+			while(rs.next()) {
+				Employees employees = new Employees();
+				employees.setEmpNo(rs.getInt("emp_no"));
+				employees.setBirthDate(rs.getString("birth_date"));
+				employees.setFirstName(rs.getString("first_name"));
+				employees.setLastName(rs.getString("last_name"));
+				employees.setGender(rs.getString("gender"));
+				employees.setHireDate(rs.getString("hire_date"));
+				list.add(employees);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBHelper.close(rs, stmt, conn);
+		}
+		return list;
+	}
+	
 	//사원번호를 기준으로 해당범위의 사람을 찾는 메소드 생성
 	public int selectEmpNo(String str) {
 		int empNo = 0;
