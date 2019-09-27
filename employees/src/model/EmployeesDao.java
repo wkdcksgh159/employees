@@ -13,6 +13,40 @@ import VO.Employees;
 import db.DBHelper;
 
 public class EmployeesDao {
+	public int login(Employees employees) {
+		//VO의 값 가져오기
+		String firstName = employees.getFirstName();
+		String lastName = employees.getLastName();
+		int empNo = employees.getEmpNo();
+		//디버깅
+		System.out.println("model firstName : "+firstName);
+		System.out.println("model lastName : "+lastName);
+		System.out.println("model empNo : "+empNo);
+		//연결정보, 쿼리정보, session으로 보낼값 선언
+		int sessionEmpNo = 0;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		//테이블 employees의 first_name, last_name, emp_no 를 입력받은 first_name, last_name, emp_no 의 해당값을 출력
+		String sql = "select first_name, last_name, emp_no FROM employees WHERE first_name=? and last_name=? and emp_no=?";
+		try {
+			conn = DBHelper.getConnection();
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, firstName);
+			stmt.setString(2, lastName);
+			stmt.setInt(3, empNo);
+			rs = stmt.executeQuery();
+			if(rs.next()) {
+				//session으로 emp_no의 값을 보냄
+				sessionEmpNo = rs.getInt(3);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBHelper.close(rs, stmt, conn);
+		}
+		return sessionEmpNo;
+	}
 	//마지막페이지 구하는 메소드 생성
 	public int selectLastPage(int rowPerPage) {
 		EmployeesDao employeesDao = new EmployeesDao();

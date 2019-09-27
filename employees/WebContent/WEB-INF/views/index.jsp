@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,10 @@
 <body>
 	<h1>Index</h1>
 	<h2>테이블 정보</h2>
+	<!-- 로그인이된 상태면 로그아웃버튼 생성 -->
+	<c:if test="${sessionEmpNo != null}">
+		<a href="${pageContext.request.contextPath }/logout">로그아웃</a>
+	</c:if>
 	<!-- 테이블당 항목 개수 출력 -->
 	<div>
 		<table border="1">
