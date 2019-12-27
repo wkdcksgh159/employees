@@ -34,5 +34,4 @@ public class GetEmployeesListServlet extends HttpServlet {
 		//전송한 데이터를 그대로 유지하면서 해당페이지로 이동
 		request.getRequestDispatcher("/WEB-INF/views/employees/employeesList.jsp").forward(request, response);
 	}
-
 }

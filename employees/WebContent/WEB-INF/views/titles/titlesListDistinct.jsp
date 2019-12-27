@@ -8,12 +8,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>업무 목록(중복제거 distinct)</h1>
-	<a href="${pageContext.request.contextPath}/index">처음으로</a>
-	<ol>
-		<c:forEach var="row" items="${list }">
-			<li>${row}</li>
-		</c:forEach>
-	</ol>
+	<div id="top-menu">
+		<%@include file="/menu.jsp"%>
+	</div>
+	<!-- 제목 -->
+	<div id="title">
+		업무목록
+		<hr>
+	</div>
+	<div id="main">	
+		<ol>
+			<c:forEach var="row" items="${list }">
+				<li>${row}</li>
+			</c:forEach>
+		</ol>
+	</div>
 </body>
 </html>

@@ -27,7 +27,5 @@ public class GetEmployeesListBetweenServlet extends HttpServlet {
 		
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/WEB-INF/views/employees/employeesListBetween.jsp").forward(request, response);
-		
 	}
-
 }

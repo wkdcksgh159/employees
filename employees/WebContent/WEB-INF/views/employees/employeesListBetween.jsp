@@ -8,32 +8,43 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>사원 목록 between</h1>
-	<a href="${pageContext.request.contextPath}/index">처음으로</a>
-	<table border="1">
-		<thead>
-			<tr>
-				<th>사원 번호</th>
-				<th>사원 생일</th>
-				<th>사원 이름</th>
-				<th>사원 성</th>
-				<th>사원 성별</th>
-				<th>입사 날짜</th>
-			</tr>
-		</thead>
-		<tbody>
-			<!-- list의 값을 참조하는 변수 employees 생성 -->
-			<c:forEach var="employees" items="${list }">
+	<div id="top-menu">
+		<%@include file="/menu.jsp"%>
+	</div>
+	<!-- 제목 -->
+	<div id="title">
+		사원목록
+		<hr>
+	</div>
+	<div id="main">
+		<div id="employeesListAll">
+			<%@include file="/employeesTag.jsp"%>
+		</div>
+		<table id="elist">
+			<thead>
 				<tr>
-					<td>${employees.empNo }</td>
-					<td>${employees.birthDate }</td>
-					<td>${employees.firstName }</td>
-					<td>${employees.lastName }</td>
-					<td>${employees.gender }</td>
-					<td>${employees.hireDate }</td>
+					<th>사원 번호</th>
+					<th>사원 생일</th>
+					<th>사원 이름</th>
+					<th>사원 성</th>
+					<th>사원 성별</th>
+					<th>입사 날짜</th>
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<!-- list의 값을 참조하는 변수 employees 생성 -->
+				<c:forEach var="employees" items="${list }">
+					<tr>
+						<td>${employees.empNo }</td>
+						<td>${employees.birthDate }</td>
+						<td>${employees.firstName }</td>
+						<td>${employees.lastName }</td>
+						<td>${employees.gender }</td>
+						<td>${employees.hireDate }</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
