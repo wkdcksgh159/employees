@@ -36,9 +36,9 @@
 			<thead>
 				<tr>
 					<th>사원 번호</th>
-					<th>사원 생일</th>
 					<th>사원 이름</th>
 					<th>사원 성</th>
+					<th>사원 생일</th>
 					<th>사원 성별</th>
 					<th>입사 날짜</th>
 				</tr>
@@ -47,9 +47,9 @@
 				<c:forEach var="employees" items="${list}">
 					<tr>
 						<td>${employees.empNo }</td>
-						<td>${employees.birthDate }</td>
 						<td>${employees.firstName }</td>
 						<td>${employees.lastName }</td>
+						<td>${employees.birthDate }</td>
 						<td>${employees.gender }</td>
 						<td>${employees.hireDate }</td>
 					</tr>

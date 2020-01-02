@@ -17,6 +17,59 @@
 		<hr>
 	</div>
 	<div id="main">
+		<!-- 페이지 기능 간략히 출력 -->
+		<div style="margin:auto;color:white;">
+			<div style="display:inline-block;width:45%;margin:35px;">
+				<div style="border:1px solid;height:80px;background-color:#9b59b6;">
+					<div style="position:relative;top:20px;left:20px;font-size:30px;">
+						부서목록
+					</div>
+				</div>
+				<div style="border:1px solid;height:250px;">
+					<a href="/employees/departments/getDepartmentsList">
+						<img style="width:100%;height:100%;" src="/employees/img/DepartmentsList.JPG">
+					</a>
+				</div>
+			</div>
+			<div style="display:inline-block;width:45%;margin:35px;">
+				<div style="border:1px solid;height:80px;background-color:#9b59b6;">
+					<div style="position:relative;top:20px;left:20px;font-size:30px;">
+						사원목록
+					</div>
+				</div>
+				<div style="border:1px solid;height:250px;">
+					<a href="/employees/employees/getEmployeesList">
+						<img style="width:100%;height:100%;" src="/employees/img/EmployeesList.JPG">
+					</a>
+				</div>
+			</div>
+			<br>
+			<div style="display:inline-block;width:45%;margin:35px;">
+				<div style="border:1px solid;height:80px;background-color:#9b59b6;">
+					<div style="position:relative;top:20px;left:20px;font-size:30px;">
+						직급체계
+					</div>
+				</div>
+				<div style="border:1px solid;height:250px;">
+					<a href="/employees/titles/getTitlesListDistinct">
+						<img style="width:100%;height:100%;" src="/employees/img/TitlesList.JPG">
+					</a>
+				</div>
+			</div>
+			<div style="display:inline-block;width:45%;margin:35px;">
+				<div style="border:1px solid;height:80px;background-color:#9b59b6;">
+					<div style="position:relative;top:20px;left:20px;font-size:30px;">
+						통계
+					</div>
+				</div>
+				<div style="border:1px solid;height:250px;">
+					<a href="/employees/salaries/getSalariesStatistics">
+						<img style="width:100%;height:100%;" src="/employees/img/SalariesStatistics.JPG">
+					</a>
+				</div>
+			</div>
+		</div>
+		<hr style="border:1px solid;margin:30px;">
 		<!-- 테이블당 항목 개수 출력 -->
 		<div>
 			<table border="1">

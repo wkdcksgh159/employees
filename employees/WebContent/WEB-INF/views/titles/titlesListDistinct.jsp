@@ -13,15 +13,22 @@
 	</div>
 	<!-- 제목 -->
 	<div id="title">
-		업무목록
+		직급체계
 		<hr>
 	</div>
-	<div id="main">	
-		<ol>
-			<c:forEach var="row" items="${list }">
-				<li>${row}</li>
-			</c:forEach>
-		</ol>
+	<div id="main">
+		<div style="margin-left:15%;">
+			<div style="display:inline-block;vertical-align:top">
+				<ul style="font-size:45px;">
+					<c:forEach var="row" items="${list }">
+						<li>${row}</li>
+					</c:forEach>
+				</ul>
+			</div>
+			<div style="display:inline-block;width:55%;margin-left:10%;vertical-align:bottom">
+				<img style="width:100%" src="/employees/img/rank system.jpg">
+			</div>
+		</div>
 	</div>
 </body>
 </html>

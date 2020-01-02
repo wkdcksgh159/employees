@@ -28,14 +28,6 @@ public class IndexServlet extends HttpServlet {
 	private TitlesDao titlesDao;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//HttpSession타입 getSession 인스턴스 선언
-		HttpSession session = request.getSession();
-		//로그인 유무 체크 값이 null이면 로그인 서블릿으로 보냄
-//		if(session.getAttribute("sessionEmpNo") == null) {
-//			response.sendRedirect(request.getContextPath()+"/login");
-//			return;
-//		}
-		
 		System.out.println("/index URL 요청");
 		//인스턴스화 (항목의 총 개수를 세는 count 메소드를 변수에 저장)
 		departmentsDao = new DepartmentsDao();
